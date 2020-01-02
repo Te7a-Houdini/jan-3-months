@@ -29,4 +29,13 @@ class PostController extends Controller
     {
         return view('posts.create');
     }
+
+    function store()
+    {
+        //logic to store the data in DB
+        dd( request()->title);
+        return request();
+
+        return 'we are in store';
+    }
 }
