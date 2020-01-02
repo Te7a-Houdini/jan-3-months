@@ -16,5 +16,8 @@ Route::get('/welcome', function () {
 });
 
 Route::get('/posts', function () {
-    return view('posts');
+    return view('posts',[
+        'name' => 'mohamed',
+        'age' => 40,
+    ]);
 });
