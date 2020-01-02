@@ -15,6 +15,7 @@
             <th scope="col">Title</th>
             <th scope="col">Content</th>
             <th scope="col">Creted at</th>
+            <th scope="col">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -24,6 +25,7 @@
             <td>{{$value['title']}}</td>
             <td>{{$value['content']}}</td>
             <td>{{$value['created_at']}}</td>
+          <td><a href="{{route('posts.show',['post' => $value['id']])}}">View Details</a></td>
           </tr>
           @endforeach
 

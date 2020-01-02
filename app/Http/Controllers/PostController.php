@@ -38,4 +38,9 @@ class PostController extends Controller
 
         return 'we are in store';
     }
+
+    function show($post)
+    {
+        return $post;   //another way return request()->post;
+    }
 }
