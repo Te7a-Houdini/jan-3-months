@@ -18,7 +18,7 @@
             <td>{{$value['title']}}</td>
             <td>{{$value['content']}}</td>
             <td>{{$value['created_at']}}</td>
-          <td><a href="{{route('posts.show',['post' => $value['id']])}}">View Details</a></td>
+            <td><a href="{{route('posts.show',['post' => $value['id'] ])}}">View Details</a></td>
           </tr>
           @endforeach
 

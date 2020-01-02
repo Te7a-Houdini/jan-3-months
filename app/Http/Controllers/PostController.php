@@ -3,26 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Post; //require('app/Post')
 class PostController extends Controller
 {
     function index () 
     {
         return view('posts.index',[
-            'posts' => [
-                [
-                    'id' => 1,
-                    'title' => 'First Post',
-                    'content' => 'Any Thing',
-                    'created_at' => '2019-01-20'
-                ],
-                [
-                    'id' => 2,
-                    'title' => 'Second Post',
-                    'content' => 'Any Content',
-                    'created_at' => '2019-02-30'
-                ],
-            ]
+            'posts' => Post::all()
         ]);
     }
     function create()
@@ -33,10 +20,12 @@ class PostController extends Controller
     function store()
     {
         //logic to store the data in DB
-        dd( request()->title);
-        return request();
-
-        return 'we are in store';
+        $post = new Post;
+        $post->title = request()->title;
+        $post->content = request()->content;
+        $post->save();
+        
+        return redirect()->route('posts.index');
     }
 
     function show($post)
