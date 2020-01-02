@@ -19,12 +19,16 @@ class PostController extends Controller
 
     function store()
     {
-        //logic to store the data in DB
-        $post = new Post;
-        $post->title = request()->title;
-        $post->content = request()->content;
-        $post->save();
+        //alternative
+        // $post = new Post;
+        // $post->title = request()->title;
+        // $post->content = request()->content;
+        // $post->save();
         
+        Post::create([
+            'title' => request()->title,
+            'content' => request()->content
+        ]);
         return redirect()->route('posts.index');
     }
 
