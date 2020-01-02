@@ -8,7 +8,7 @@ class PostController extends Controller
 {
     function index () 
     {
-        return view('posts',[
+        return view('posts.index',[
             'posts' => [
                 [
                     'id' => 1,
@@ -24,5 +24,9 @@ class PostController extends Controller
                 ],
             ]
         ]);
+    }
+    function create()
+    {
+        return view('posts.create');
     }
 }
