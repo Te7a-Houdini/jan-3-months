@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/welcome', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
@@ -19,4 +19,56 @@ Route::get('/posts', 'PostController@index')->name('posts.index');
 Route::get('posts/create', 'PostController@create');
 Route::post('/posts', 'PostController@store');
 Route::get('/posts/{post}', 'PostController@show')->name('posts.show');
+
+// class Person {
+//     protected function run()
+//     {
+        
+//     }
+
+//     private function ay7aga()
+//     {
+        
+//     }
+// }
+
+// class Student extends Person
+// {
+
+//     public function dailyRoutine()
+//     {
+//         $this->wakeUp();
+//         $this->eat();
+//         $this->walk();
+//         $this->run();
+//     }
+
+
+
+//     private function wakeUp()
+//     {
+
+//     }
+
+//     function eat()
+//     {
+
+//     }
+
+//     function walk()
+//     {
+
+//     }
+// }
+
+// $ahmed = new Student;
+// // $ahmed->wakeUp();
+// // $ahmed->eat();
+// // $ahmed->walk();
+// $ahmed->dailyRoutine(); //
+
+
+// $ahmed->wakeUp(); // throw exception cause it's private
+// $ahmed->run(); // throw exception cause it's protected
+
 
