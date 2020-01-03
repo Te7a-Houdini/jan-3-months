@@ -22,7 +22,6 @@ class PostController extends Controller
 
     public function store(StorePostRequest $request)
     {
-        dd($request->all());
         //alternative
         // $post = new Post;
         // $post->title = request()->title;
@@ -31,7 +30,8 @@ class PostController extends Controller
         
         Post::create([
             'title' => $request->title,
-            'content' => $request->content
+            'content' => $request->content,
+            'user_id' => $request->user()->id
         ]);
 
         return redirect()->route('posts.index');
