@@ -72,3 +72,7 @@ Route::get('/posts/{post}', 'PostController@show')->name('posts.show');
 // $ahmed->run(); // throw exception cause it's protected
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
