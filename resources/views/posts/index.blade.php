@@ -5,6 +5,7 @@
         <thead>
           <tr>
             <th scope="col">#</th>
+            <th scope="col">Created By</th>
             <th scope="col">Title</th>
             <th scope="col">Content</th>
             <th scope="col">Creted at</th>
@@ -12,13 +13,14 @@
           </tr>
         </thead>
         <tbody>
-        @foreach($posts as $index => $value)  
+        @foreach($thisIsViewPosts as $index => $post)  
         <tr>
-        <th scope="row">{{$value['id']}}</th>
-            <td>{{$value['title']}}</td>
-            <td>{{$value['content']}}</td>
-            <td>{{$value['created_at']}}</td>
-            <td><a href="{{route('posts.show',['post' => $value['id'] ])}}">View Details</a></td>
+        <th scope="row">{{$post['id']}}</th>
+        <td>{{$post->user->name}}</td>
+            <td>{{$post['title']}}</td>
+            <td>{{$post['content']}}</td>
+            <td>{{$post['created_at']}}</td>
+            <td><a href="{{route('posts.show',['post' => $post['id'] ])}}">View Details</a></td>
           </tr>
           @endforeach
 

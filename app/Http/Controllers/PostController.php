@@ -10,8 +10,12 @@ class PostController extends Controller
 {
     public function index()
     {
+        // $userModelObject = request()->user();
+
+        // dd($userModelObject->posts);
+        //Post::class == App\Post
         return view('posts.index', [
-            'posts' => Post::all()
+            'thisIsViewPosts' => Post::all()
         ]);
     }
 
@@ -22,6 +26,9 @@ class PostController extends Controller
 
     public function store(StorePostRequest $request)
     {
+        //title                //slug
+        //World Journey        //world-jounery
+
         //alternative
         // $post = new Post;
         // $post->title = request()->title;
