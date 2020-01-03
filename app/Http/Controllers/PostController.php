@@ -4,20 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post; //require('app/Post')
+
 class PostController extends Controller
 {
-    function index () 
+    public function index()
     {
-        return view('posts.index',[
+        return view('posts.index', [
             'posts' => Post::all()
         ]);
     }
-    function create()
+    public function create()
     {
         return view('posts.create');
     }
 
-    function store()
+    public function store()
     {
         //alternative
         // $post = new Post;
@@ -32,7 +33,7 @@ class PostController extends Controller
         return redirect()->route('posts.index');
     }
 
-    function show($post)
+    public function show($post)
     {
         return $post;   //another way return request()->post;
     }
