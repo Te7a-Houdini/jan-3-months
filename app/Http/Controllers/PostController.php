@@ -22,6 +22,7 @@ class PostController extends Controller
 
     public function store(StorePostRequest $request)
     {
+        dd($request->all());
         //alternative
         // $post = new Post;
         // $post->title = request()->title;
