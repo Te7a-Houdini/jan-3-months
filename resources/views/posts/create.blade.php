@@ -2,6 +2,15 @@
 
 @section('content')
     <h1>Create Post</h1>
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
     <form method="POST" action="/posts">
         @csrf
         <div class="form-group">
@@ -13,10 +22,6 @@
           <input name="content" type="text" class="form-control" id="exampleInputPassword1" >
         </div>
 
-        <div class="form-group">
-            <label for="exampleInputPassword1">Created At</label>
-            <input name="created_at" type="text" class="form-control" id="exampleInputPassword1" >
-          </div>
      
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>

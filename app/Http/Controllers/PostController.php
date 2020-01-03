@@ -13,6 +13,7 @@ class PostController extends Controller
             'posts' => Post::all()
         ]);
     }
+
     public function create()
     {
         return view('posts.create');
@@ -20,6 +21,10 @@ class PostController extends Controller
 
     public function store()
     {
+        $validatedData = request()->validate([
+            'title' => 'required|min:5',
+            'content' => 'required',
+        ]);
         //alternative
         // $post = new Post;
         // $post->title = request()->title;
@@ -30,6 +35,7 @@ class PostController extends Controller
             'title' => request()->title,
             'content' => request()->content
         ]);
+
         return redirect()->route('posts.index');
     }
 
